@@ -1,0 +1,2 @@
+do(define(sum, fun(num, +(num, 1))),
+	print(sum(10)))

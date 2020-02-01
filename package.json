@@ -1,0 +1,17 @@
+{
+  "name": "next_lang",
+  "version": "1.0.0",
+  "description": "Next - new easy programming language",
+  "main": "Next.js",
+  "scripts": {
+    "test": "echo Test sucessfully"
+  },
+  "keywords": [
+    "Next",
+    "next",
+    "next_lang",
+    "Next_lang"
+  ],
+  "author": "NickProgramm",
+  "license": "MIT"
+}
