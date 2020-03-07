@@ -172,20 +172,20 @@ topEnv["eval"] = function(code) { //Eval JS Code
 }
 
 //File system, start
-topEnv["readFile"] = function(file, encoding) {
+topEnv["fs.readFile"] = function(file, encoding) {
   var fileContent = fs.readFileSync(file, encoding);
   return fileContent;
 }
 
-topEnv["writeFile"] = function(file, text) {
+topEnv["fs.writeFile"] = function(file, text) {
   fs.writeFileSync(file, text);
 }
 
-topEnv["appendFile"] = function(file, text) {
+topEnv["fs.appendFile"] = function(file, text) {
   fs.appendFileSync(file, text);
 }
 
-topEnv["deleteFile"] = function(file) {
+topEnv["fs.deleteFile"] = function(file) {
   fs.unlinkSync(file);
 }
 //File system, end
@@ -230,12 +230,29 @@ specialForms["fun"] = function(args, env) {
     "   print(fileContent))");*/
 var path = require("path");
 let inputProgramm = process.argv[2];
+//Version
+if(inputProgramm == "-v" || inputProgramm == "--version") {
+  console.log("Next. Version 1.0.3")
+}
+//Log mode
+else if(inputProgramm == "-l" || inputProgramm == "--log") {
+  if(path.extname(process.argv[3]) == ".next") {
+    console.log("Parser:");
+    console.log(parse(fs.readFileSync(process.argv[3], "utf8")))
+    console.log("Programm:")
+    run(fs.readFileSync(process.argv[3], "utf8"));
+  } else {
+    throw new TypeError("Unknown input file type")
+  }
+}
+//Standart mode
+else {
 if(path.extname(inputProgramm) == ".next") {
 
   run(fs.readFileSync(inputProgramm, "utf8"));
 } else {
   throw new TypeError("Unknown input file type")
 }
-
+}
 //console.log(parse("# hello\nx"));
 //console.log(parse("a # one\n    # two\n()"));
