@@ -17,4 +17,4 @@ do(define(test, "Hello World"),
 ```
 # Developer's
 
-[NickProgramm](https://vk.com/3peekawowd)
+[3peekawOwD](https://vk.com/3peekawowd)
