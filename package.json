@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Next - new easy programming language",
   "main": "Next.js",
+  "bin": {
+    "next": "./Next.js"
+  }
   "scripts": {
     "test": "echo Test sucessfully"
   },
