@@ -3,6 +3,7 @@ Next - new programming language.
 Next written of JS
 (C)2020 NickProgramm & 3peekawOwD
 */
+#!/usr/bin/env node
 const fs = require("fs");
 const readline = require('readline');
 
