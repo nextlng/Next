@@ -5,7 +5,7 @@
   "main": "Next.js",
   "bin": {
     "next": "./Next.js"
-  }
+  },
   "scripts": {
     "test": "echo Test sucessfully"
   },
