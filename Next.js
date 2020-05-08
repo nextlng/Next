@@ -1,9 +1,9 @@
+#!/usr/bin/env node
 /*
 Next - new programming language.
 Next written of JS
 (C)2020 NickProgramm & 3peekawOwD
 */
-#!/usr/bin/env node
 const fs = require("fs");
 const readline = require('readline');
 
@@ -118,6 +118,8 @@ var topEnv = Object.create(null);
 
 topEnv["true"] = true; // → true
 topEnv["false"] = false; // → false
+topEnv["null"] = null; // → null
+topEnv["undefined"] = undefined; // → undefined
 
 ["+", "-", "*", "/", "==", "<", ">"].forEach(function(op) {
   topEnv[op] = new Function("a, b", "return a " + op + " b;");
@@ -171,7 +173,6 @@ specialForms["set"] = function(args, env) {
 topEnv["eval"] = function(code) { //Eval JS Code
   return eval(code)
 }
-
 //File system, start
 topEnv["fs.readFile"] = function(file, encoding) {
   var fileContent = fs.readFileSync(file, encoding);
@@ -231,29 +232,27 @@ specialForms["fun"] = function(args, env) {
     "   print(fileContent))");*/
 var path = require("path");
 let inputProgramm = process.argv[2];
+const showLog = ~process.argv.indexOf('--log');
 //Version
 if(inputProgramm == "-v" || inputProgramm == "--version") {
   console.log("Next. Version 1.0.3")
 }
 //Log mode
-else if(inputProgramm == "-l" || inputProgramm == "--log") {
-  if(path.extname(process.argv[3]) == ".next") {
+if(showLog) {
+  if(path.extname(inputProgramm) == ".next") {
     console.log("Parser:");
-    console.log(parse(fs.readFileSync(process.argv[3], "utf8")))
+    console.log(parse(fs.readFileSync(inputProgramm, "utf8")))
     console.log("Programm:")
-    run(fs.readFileSync(process.argv[3], "utf8"));
+    run(fs.readFileSync(inputProgramm, "utf8"));
   } else {
     throw new TypeError("Unknown input file type")
   }
+  return;
 }
-//Standart mode
-else {
+
 if(path.extname(inputProgramm) == ".next") {
 
   run(fs.readFileSync(inputProgramm, "utf8"));
 } else {
   throw new TypeError("Unknown input file type")
 }
-}
-//console.log(parse("# hello\nx"));
-//console.log(parse("a # one\n    # two\n()"));

@@ -7,7 +7,8 @@
     "next": "./Next.js"
   },
   "scripts": {
-    "test": "echo Test sucessfully"
+    "test": "node Next.js test/eval.next",
+    "test-dev": "node Next.js test/eval.next --log"
   },
   "keywords": [
     "Next",
@@ -15,6 +16,6 @@
     "next_lang",
     "Next_lang"
   ],
-  "author": "NickProgramm",
+  "author": "3peekawOwD",
   "license": "MIT"
 }
