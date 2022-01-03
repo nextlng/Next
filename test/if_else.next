@@ -1,4 +1,7 @@
-do(define(x, 10),
-   if(>(x, 5),
-      print("True"),
-      print("False")))
+do(
+	define(x, 10),
+	if(>(x, 5),
+		println("True"),
+		println("False")
+	)
+)

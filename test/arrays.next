@@ -1,0 +1,9 @@
+do(
+	define(array, array(1, 2, 3)),
+	println("=== ARRAY ==="),
+	println(array),
+	println("=== LENGTH ==="),
+	println(length(array)),
+	println("=== ELEMENT ==="),
+	println(element(array, 0))
+)

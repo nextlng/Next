@@ -23,7 +23,7 @@ contexts:
     # strings in YAML. When using single quoted strings, only single quotes
     # need to be escaped: this is done by using two single quotes next to each
     # other.
-    - match: '\b(if|else|fun|while|do|eval|define|print|array|length|element|set|readFile|writeFile|appendFile|deleteFile|fetch)\b'
+    - match: '\b(if|else|fun|while|do|eval|define|print|println|input|array|length|element|set|readFile|writeFile|appendFile|deleteFile|abs|acos|asin|atan|ceil|clip|floor|isFinite|isNaN|log10|min|max|pow|round|sin|square|sqrt|tan|rad2deg|deg2rad|num2str)\b'
       scope: keyword.control.example-c
 
     # Numbers

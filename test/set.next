@@ -1,0 +1,6 @@
+do(
+	define(test, "Hello"),
+	println(test),
+	set(test, "Hello Next"),
+	println(test)
+)

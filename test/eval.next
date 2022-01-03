@@ -1,4 +1,3 @@
 do(
-	define(result, eval("console.log('test');")), #Eval JavaScript Code
-	print(result) #Print result
+	eval("console.log('test');")
 )

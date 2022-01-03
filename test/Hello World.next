@@ -1,3 +1,4 @@
-do(define(test, "Hello World"),
-   print(test) #comment
+do(
+	define(test, "Hello World"),
+	println(test) #comment
 )
