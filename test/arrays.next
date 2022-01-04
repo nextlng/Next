@@ -5,5 +5,9 @@ do(
 	println("=== LENGTH ==="),
 	println(length(array)),
 	println("=== ELEMENT ==="),
-	println(element(array, 0))
+	println(element(array, 0)),
+	println("=== SPLIT ==="),
+	println(split("1,2,3", ",")),
+	println("=== JOIN ==="),
+	println(join(array, ","))
 )

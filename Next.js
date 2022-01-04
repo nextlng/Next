@@ -156,6 +156,15 @@ topEnv["length"] = function(array) {
 topEnv["element"] = function(array, i) {
 	return array[i];
 }
+topEnv["split"] = function(str, i) {
+	return str.split(i)
+}
+topEnv["join"] = function(str, i) {
+	return str.join(i)
+}
+topEnv["slice"] = function(str, start, end) {
+	str.slice(start, end)
+}
 
 specialForms["set"] = function(args, env) {
 	if (args.length != 2 || args[0].type != "word")
@@ -210,6 +219,15 @@ topEnv["deg2rad"] = function(degs) {
 }
 topEnv["num2str"] = function(num) {
 	return num.toString()
+}
+topEnv["str2num"] = function(str) {
+	return parseInt(str)
+}
+topEnv["sort"] = function(arr, condition) {
+	return arr.sort(eval(condition))
+}
+topEnv["filter"] = function(arr, condition) {
+	return arr.filter(eval(condition))
 }
 
 function run() {
